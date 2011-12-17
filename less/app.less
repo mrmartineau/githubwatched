@@ -12,21 +12,15 @@
 /*------------------------------------------*/
 /*Transitions*/
 a, li {
--webkit-transition: all 0.12s ease-in-out;
-   -moz-transition: all 0.12s ease-in-out;
-	 -o-transition: all 0.12s ease-in-out;
-		transition: all 0.12s ease-in-out;
+		.transition(all 0.12s ease-in-out)
 }
 /*Border Radius*/
 .item_language,
 li {
--webkit-border-radius: 2px;
- -khtml-border-radius: 2px;
-   -moz-border-radius: 2px;
-		border-radius: 2px;
+		.border-radius(4px);
 }
 
-
+html { background-color: #f9f9f9;}
 /*------------------------------------------*/
 /*--- WATCHED ---*/
 /*------------------------------------------*/
@@ -49,6 +43,7 @@ ol li {
 		border:1px solid #eee;
 		padding: 15px;
 		margin: 0 0 15px;
+		background-color: #fff;
 }
 li:hover {
 		border-color:#444;
@@ -75,7 +70,13 @@ a.item_owner {
 		color: #fff;
 		text-shadow: -1px -1px 0 #000;
 		text-decoration: none;
-		background: url('https://a248.e.akamai.net/assets.github.com/images/modules/compare/sha_gradient.gif') 0 0 repeat-x #333;
+		background-color: #686868;
+		background-image: -webkit-gradient(linear, left top, left bottom, from(#686868), to(#282828));
+		background-image: -webkit-linear-gradient(top, #686868, #282828);
+		background-image: -moz-linear-gradient(top, #686868, #282828);
+		background-image: -o-linear-gradient(top, #686868, #282828);
+		background-image: -ms-linear-gradient(top, #686868, #282828);
+		background-image: linear-gradient(top, #686868, #282828);
 		height:15px;
 }
 .item_description * {
