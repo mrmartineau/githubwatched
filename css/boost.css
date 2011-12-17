@@ -175,6 +175,7 @@ html {
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  padding: 30px;
 }
 body {
   min-height: 100%;
@@ -1568,7 +1569,7 @@ input:invalid, textarea:invalid {
   width: 250px;
 }
 .input_xxlarge {
-  width: 300px;
+  width: 400px;
 }
 .input_full {
   width: 100%;
@@ -2034,6 +2035,12 @@ a.item_owner {
   text-shadow: #000 0 0 3px;
 }
 .item_description * {
+  display: none;
+}
+input[type=text] {
+  font-size: 1.3em;
+}
+input[type=submit] {
   display: none;
 }
 /*------------------------------------------*/
