@@ -18,7 +18,7 @@ function loadUser(username) {
 	//
 	$.ajax({
 		url: "https://api.github.com/users/" + username +"/watched?page=1&per_page=100&callback=?",
-		context: document.body,
+		context: '#watched',
 		dataType: "jsonp",
 		success: function(data){
 			var items = [];
@@ -43,7 +43,7 @@ function loadUser(username) {
 	//
 	$.ajax({
 		url: "https://api.github.com/users/" + username +"/repos?page=1&per_page=100&callback=?",
-		context: document.body,
+		context: '#your',
 		dataType: "jsonp",
 		success: function(data){
 			var items = [];
