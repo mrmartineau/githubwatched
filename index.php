@@ -21,7 +21,8 @@
 <body>
 	<div id="container">
 		<header id="header" class="row" role="banner">
-			<h1><a href="/" class="column grid_12">Github  watched</a></h1>
+			<h1><a href="https://github.com/mrmartineau/githubwatched" class="column grid_12">Github  watched</a></h1>
+			by <a href="http://github.com/mrmartineau" title="Zander Martineau">Zander Martineau</a>
 		</header>
 		<section id="main" role="main" class="row">
 			<div class="grid_12 column">
