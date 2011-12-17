@@ -2027,12 +2027,16 @@ a.item_owner {
 }
 .item_language {
   display: inline-block;
-  line-height: 1;
-  background-color: #444;
+  padding: 2px 5px;
+  line-height: 15px;
+  font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+  font-size: 12px;
+  font-weight: normal;
   color: #fff;
-  padding: 3px 5px;
-  font-size: .75em;
-  text-shadow: #000 0 0 3px;
+  text-shadow: -1px -1px 0 #000000;
+  text-decoration: none;
+  background: url('https://a248.e.akamai.net/assets.github.com/images/modules/compare/sha_gradient.gif') 0 0 repeat-x #333333;
+  height: 15px;
 }
 .item_description * {
   display: none;
