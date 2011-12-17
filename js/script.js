@@ -1,4 +1,5 @@
 var defaultUser = 'mrmartineau';
+var i = 100;
 
 //show loading graphic
 function loading() {
@@ -10,15 +11,15 @@ function loaded() {
 	$('.wrappers').removeClass('loading');
 }
 
-function loadUser(username) {
-	//
+function loadUserAndRepo(username, type, id) {
+	i++;
 	loading();
 	//
-	//	Watched repos
+	// repos
 	//
 	$.ajax({
-		url: "https://api.github.com/users/" + username +"/watched?page=1&per_page=100&callback=?",
-		context: '#watched',
+		url: "https://api.github.com/users/" + username +"/" + type +"?page=1&per_page=100&callback=?",
+		context: id,
 		dataType: "jsonp",
 		success: function(data){
 			var items = [];
@@ -33,62 +34,36 @@ function loadUser(username) {
 			$('<ol/>', {
 				'class': '',
 				html: items.join('')
-			}).appendTo('#watched');
-			loaded();
-		}
-	});
-
-	//
-	//	Your repos
-	//
-	$.ajax({
-		url: "https://api.github.com/users/" + username +"/repos?page=1&per_page=100&callback=?",
-		context: '#your',
-		dataType: "jsonp",
-		success: function(data){
-			var items = [];
-			$.each(data.data, function(i,item){
-				items.push('<li>'+
-				'<a href="' + item.html_url +'" title="' + item.name +'" class="item_name">' + item.name +'</a>'+
-				'<a href="' + item.owner.url +'" title="' + item.owner.login +'" class="item_owner">' + item.owner.login +'</a>'+
-				'<div class="item_description">' + item.description +'</div>'+
-				'<div class="item_language">' + item.language +'</div>'+
-				'</li>');
-			});
-			$('<ol/>', {
-				'class': '',
-				html: items.join('')
-			}).appendTo('#your');
+			}).appendTo(id).hide().fadeIn();
 			loaded();
 		}
 	});
 }
 
-$('.wrappers').each(function(){
-	loading();
-});
-
 (function($) {
 
 	//same as $(document).ready();
 	$(function() {
-		loadUser(defaultUser);
+			loadUserAndRepo(defaultUser, 'watched', '#watched');
+			loadUserAndRepo(defaultUser, 'repos', '#your');
 
 		//query string
 		var qsArray = window.location.href.split('?');
 		var qs = qsArray[qsArray.length-1];
 
-		if(qs != '' && qsArray.length > 1){
+		if(qs !== '' && qsArray.length > 1){
 			$('.wrappers ol').remove();
 			loading();
 			$('#username_entry').val(qs);
-			loadUser(qs);
+			loadUserAndRepo(qs, 'watched', '#watched');
+			loadUserAndRepo(qs, 'repos', '#your');
 		}
 		//when the url textbox is used
 		$('form').submit(function(){
 			$('.wrappers ol').remove();
 			loading();
-			loadUser($('#username_entry').val());
+			loadUserAndRepo($('#username_entry').val(), 'watched', '#watched');
+			loadUserAndRepo($('#username_entry').val(), 'repos', '#your');
 			return false;
 		});
 
