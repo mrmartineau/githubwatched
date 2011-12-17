@@ -2000,6 +2000,10 @@ ol {
   margin: 0;
   list-style-type: none;
 }
+.loading {
+  background: url(../img/loader.gif) no-repeat top center;
+  min-height: 100px;
+}
 ol li {
   border: 1px solid #eee;
   padding: 15px;

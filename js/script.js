@@ -79,6 +79,8 @@ $('.wrappers').each(function(){
 		var qs = qsArray[qsArray.length-1];
 
 		if(qs != '' && qsArray.length > 1){
+			$('.wrappers ol').remove();
+			loading();
 			$('#username_entry').val(qs);
 			loadUser(qs);
 		}
