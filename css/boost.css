@@ -240,14 +240,14 @@ a:focus {
 /*------------------------------------------*/
 /*--- NAV ---*/
 /*------------------------------------------*/
-.navi.centred, .navi.centered {
+.centred, .centered {
   text-align: center;
 }
-.navi.centred li, .navi.centered li {
+.centred li, .centered li {
   display: inline;
   float: none;
 }
-.navi.centred a, .navi.centered a {
+.centred a, .centered a {
   display: inline-block;
 }
 .navi.horiz, .navi.vert {
@@ -1092,10 +1092,11 @@ ul.message {
 /*--- TABS ---*/
 /*------------------------------------------*/
 ul.tabs {
-  display: block;
-  margin: 0 0 1.5em 0;
-  padding: 0;
+  margin: 0 auto 1.5em auto;
+  padding: 0 0 0 1em;
   border-bottom: solid 1px #ddd;
+  text-align: center;
+  width: 172px;
 }
 ul.tabs li {
   display: block;

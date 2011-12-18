@@ -29,16 +29,11 @@
 					<input type="submit" value="submit">
 				</form>
 				<ul class="group tabs">
-					<li>
-						<a href="#repos" class="active">Repos</a>
-					</li>
-					<li>
-						<a href="#gists">Gists</a>
-					</li>
+					<li><a href="#repos" class="active">Repos</a></li><li><a href="#gists">Gists</a></li>
 				</ul>
 			</div>
 			<ul class="tabs_content ui_list">
-				<li id="repos">
+				<li id="repos" class="active">
 					<div class="column grid_6">
 						<h2>Your watched repos</h2>
 						<div id="watched" class="wrappers"></div>
@@ -48,7 +43,7 @@
 						<div id="your" class="wrappers"></div>
 					</div>
 				</li>
-				<li id="gists" class="active">
+				<li id="gists">
 					<div class="column grid_6">
 						<h2>Starred gists</h2>
 						<p class="small">I don't know how to list *any* user's starred gists. For some reason <a href="http://developer.github.com/v3/gists/">Github</a> only allows the 'currently authenticated' user's starred gists. Any ideas why? Any ideas on how to achieve this?</p>
