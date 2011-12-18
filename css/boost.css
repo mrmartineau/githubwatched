@@ -1119,7 +1119,7 @@ ul.tabs li a {
   font-size: .9em;
 }
 ul.tabs li a.active {
-  background: #fff;
+  background: #f9f9f9;
   height: 30px;
   position: relative;
   top: -4px;
@@ -1338,8 +1338,9 @@ cite {
   font-weight: inherit;
 }
 small, .small {
-  font-size: 87.5%;
-  line-height: 1;
+  font-size: 75%;
+  margin-bottom: 15px;
+  color: #808080;
 }
 sub, sup {
   font-size: 75%;

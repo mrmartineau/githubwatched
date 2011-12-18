@@ -19,7 +19,7 @@
 	<div id="container">
 		<header id="header" class="row" role="banner">
 			<img src="img/Octocat.png" alt="The Octocat" width="170">
-			<h1><a href="https://github.com/mrmartineau/githubwatched">Github  watched</a></h1>
+			<h1><a href="https://github.com/mrmartineau/githubwatched" class="column grid_12">Github  watched</a></h1>
 			by <a href="http://github.com/mrmartineau" title="Zander Martineau">Zander Martineau</a>
 		</header>
 		<section id="main" role="main" class="row">
@@ -28,16 +28,38 @@
 					<input type="text" placeholder="Enter your Github username and hit enter" id="username_entry" class="input_xxlarge" autofocus value="MrMartineau"/>
 					<input type="submit" value="submit">
 				</form>
+				<ul class="group tabs">
+					<li>
+						<a href="#repos" class="active">Repos</a>
+					</li>
+					<li>
+						<a href="#gists">Gists</a>
+					</li>
+				</ul>
 			</div>
-			<div class="column grid_6">
-				<h2>Your watched repos</h2>
-				<div id="watched" class="wrappers"></div>
-			</div>
-			<div class="column grid_6">
-				<h2>Your repos</h2>
-				<div id="your" class="wrappers"></div>
-
-			</div>
+			<ul class="tabs_content ui_list">
+				<li id="repos">
+					<div class="column grid_6">
+						<h2>Your watched repos</h2>
+						<div id="watched" class="wrappers"></div>
+					</div>
+					<div class="column grid_6">
+						<h2>Your repos</h2>
+						<div id="your" class="wrappers"></div>
+					</div>
+				</li>
+				<li id="gists" class="active">
+					<div class="column grid_6">
+						<h2>Starred gists</h2>
+						<p class="small">I don't know how to list *any* user's starred gists. For some reason <a href="http://developer.github.com/v3/gists/">Github</a> only allows the 'currently authenticated' user's starred gists. Any ideas why? Any ideas on how to achieve this?</p>
+						<div id="starred_gists" class="wrappers"></div>
+					</div>
+					<div class="column grid_6">
+						<h2>Your gists</h2>
+						<div id="your_gists" class="wrappers"></div>
+					</div>
+				</li>
+			</ul>
 
 		</section><!-- /main -->
 	</div><!--!/#container -->
